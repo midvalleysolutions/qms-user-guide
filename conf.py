@@ -20,7 +20,7 @@ locale_dirs = ["locale/"]
 gettext_compact = False
 
 html_theme = "furo"
-html_title = "Quality Management System — User guide"
+html_title = "Quality Management System"
 html_baseurl = "https://midvalleysolutions.github.io/qms-user-guide/20.0/en/"
 html_static_path = []
 html_theme_options = {
