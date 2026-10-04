@@ -7,8 +7,8 @@
 # Translations live in locale/<lang>/LC_MESSAGES/*.po (sphinx-intl), English is the source.
 
 project = "Quality Management System"
-author = "LongDT"
-copyright = "2026, LongDT. This guide is licensed under CC BY-SA 4.0"
+author = "Midvalley Solutions"
+copyright = "2026, Midvalley Solutions. This guide is licensed under CC BY-SA 4.0"
 version = release = "20.0"
 
 extensions = []
@@ -21,7 +21,7 @@ gettext_compact = False
 
 html_theme = "furo"
 html_title = "Quality Management System — User guide"
-html_baseurl = "https://duonglong.github.io/qms-user-guide/20.0/en/"
+html_baseurl = "https://midvalleysolutions.github.io/qms-user-guide/20.0/en/"
 html_static_path = []
 html_theme_options = {
     "light_css_variables": {"color-brand-primary": "#714B67", "color-brand-content": "#714B67"},

@@ -1,7 +1,7 @@
 # Quality Management System for Odoo — User guide
 
 The user guide of the **Quality Management System** apps for Odoo 20.0 (the free core, the free bridges and
-**QMS Advanced**), published at https://duonglong.github.io/qms-user-guide/.
+**QMS Advanced**), published at https://midvalleysolutions.github.io/qms-user-guide/.
 
 The pages are written in reStructuredText and built with [Sphinx](https://www.sphinx-doc.org/):
 

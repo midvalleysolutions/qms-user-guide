@@ -3,8 +3,8 @@ Roadmap
 =======
 
 Where **Quality Management System** is today, and what comes next. The plan follows the clauses of ISO 9001 an
-external auditor asks about, so each step closes a gap you would otherwise cover with a spreadsheet. I do not
-publish dates I cannot keep: items are listed in the order I build them.
+external auditor asks about, so each step closes a gap you would otherwise cover with a spreadsheet. No dates
+are promised: items are listed in the planned order.
 
 .. seealso::
    :doc:`faq` — answers to the questions and messages people meet most often.
@@ -133,7 +133,7 @@ libraries to link your records to the standard.
 Next
 ====
 
-In the order I build them. The items marked **QMS Advanced** are included in its price; FMEA and PPAP are
+In the planned order. The items marked **QMS Advanced** are included in its price; FMEA and PPAP are
 paid add-ons, each bought separately, that require QMS Advanced.
 
 Quality analytics and the cost of poor quality (QMS Advanced)
@@ -209,8 +209,8 @@ Later
   citing the records used; and "was this done per procedure?" for any record. It will run on your own Anthropic
   key, so you pay the provider directly and see every cost.
 
-What I will not build
-=====================
+Out of scope
+============
 
 Some things stay out on purpose, so the apps stay focused:
 
@@ -227,5 +227,6 @@ for every app there.
 Your say
 ========
 
-The order above comes from what auditors ask for and what users tell me. If something you need is missing, or
-should come sooner, tell me through the app's page on the Odoo Apps store.
+The order above comes from what auditors ask for and what users request. If something you need is missing, or
+should come sooner, send a request to midvalleyodoosolutions@gmail.com or through the app's page on the Odoo Apps
+store.
