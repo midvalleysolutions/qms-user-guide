@@ -110,7 +110,7 @@ Each need has:
 
 :guilabel:`Next monitoring` is the last monitoring (or the day the need was added) plus the frequency. A
 :guilabel:`Continuous` need is checked by an everyday control, such as every delivery, and is never overdue. When the
-monitoring was done, click :guilabel:`Record monitoring` on the need's line. The dialog says what it records and
+monitoring was done, click :guilabel:`Log check` on the need's line. The dialog says what it records and
 shows the need's monitoring method and frequency, the last monitoring with its note, and the :guilabel:`Next
 monitoring` date that recording today sets. Write what the check found (at least ten characters) and confirm:
 Odoo confirms *Monitoring recorded on … Next check due on …*, and the need's line shows the new
@@ -119,6 +119,26 @@ Odoo confirms *Monitoring recorded on … Next check due on …*, and the need's
 .. image:: ../_images/context-party-form.png
    :alt: An interested party with its category, contact, owner and relevance, and the Needs and expectations tab with
          the type, requirement, adopted flag, monitoring method and frequency, and the Record monitoring button.
+
+.. _context-not-adopted:
+
+Needs not adopted
+-----------------
+
+A company does not have to take on every need of every party, but it must be able to say why. When you untick
+:guilabel:`Adopted` on a need, the :guilabel:`Why not adopted` column becomes required: write the reason, for example
+*Not in the contract; reconsidered at the 2027 review*. Odoo refuses to save a need that is not adopted without a
+reason: *Say why this need is not adopted: write the reason in Why not adopted, or tick Adopted and say how the need is
+monitored.*
+
+.. image:: ../_images/context-need-not-adopted.png
+   :alt: The Needs and expectations tab of Automotive customers with Adopted unticked on the PPAP need and the Why not
+         adopted cell marked Required.
+
+A need saved as not adopted before this rule existed keeps its place; the reason is asked the next time its adoption is
+changed or the need is edited in the form. The context and scope PDF prints the needs not adopted with their reason,
+and a change of the adoption or of the reason counts as a changed need in the management review. This works the same
+under the 2015 and the 2026 edition of ISO 9001.
 
 A party that is not relevant but still has adopted needs shows the warning *This party is not relevant but has
 adopted needs.* In the list, use the :guilabel:`Relevant`, :guilabel:`Not relevant`, :guilabel:`Monitoring overdue`
@@ -170,6 +190,39 @@ approved today stays in force today: its revision can be approved from tomorrow.
 .. image:: ../_images/context-scope-form.png
    :alt: An approved scope version with its in-force dates and approver, the standards claimed, and the Clauses not
          applicable tab listing the frozen declarations with their justification.
+
+.. _context-climate:
+
+The climate change decision
+---------------------------
+
+Since 2024, an ISO 9001 company must decide whether climate change is a relevant issue for its quality system, and
+the 2026 edition keeps it in clause 4.1. The decision is part of the scope, so it is signed and printed with it. It is
+needed under the 2015 and the 2026 edition alike.
+
+#. On the draft scope, in the :guilabel:`Climate change` section of the :guilabel:`Statement` tab, choose
+   :guilabel:`Climate change`: *Relevant* or *Not relevant*.
+#. In :guilabel:`Why`, write the reason, for example *Indoor machining and assembly; no site exposed to flood or heat
+   stress; customers set no climate requirement.* When climate change is relevant, name the issues or risks that carry
+   it.
+
+:guilabel:`Decided by` and :guilabel:`Decided on` fill themselves with your name and today's date when you record the
+decision or change it.
+
+.. image:: ../_images/context-scope-climate.png
+   :alt: The approved Scope v1 with its statement and the Climate change section: Not relevant, the reason, Decided by
+         DEMO Quality Manager and Decided on.
+
+Odoo refuses to approve a scope without the decision:
+
+- *Record the climate change decision before approving: say whether climate change is a relevant issue for the QMS
+  (ISO 9001 4.1) and why, in the Climate change section, then approve.*
+- *Write why climate change is not relevant for the QMS in the Climate change section, then approve.* (or *relevant*)
+
+A scope approved before the decision existed stays in force, with an amber notice: *This scope was approved without a
+climate change decision (ISO 9001 4.1). Press Revise to record it in a new version, then approve that version.* The
+audit pack lists such a scope too (see :doc:`audit_pack`). A revision copies the decision of the scope it revises.
+The context and scope PDF prints *Climate change: <decision> — <reason> — decided by <name> on <date>*.
 
 Revise the scope
 ----------------

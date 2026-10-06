@@ -20,8 +20,8 @@ The standards
      - Clauses
      - At installation
    * - ISO 9001 — Quality management systems
-     - 2015
-     - 81
+     - 2015 or 2026
+     - 81 (83 on 2026)
      - Enabled
    * - ISO 14001 — Environmental management systems
      - 2015
@@ -39,6 +39,9 @@ The standards
      - 2018
      - 64
      - Disabled
+
+ISO 9001 follows the 2015 edition until a quality manager switches it to 2026: see :doc:`edition_switch` and
+:doc:`what_changed_in_2026`.
 
 Each clause has its number as printed in the standard (for example ``10.2``), a short title, and one sentence saying
 what the clause asks for. The titles are paraphrased: the official text of the standards is copyrighted and is not
@@ -260,3 +263,4 @@ disable its standard instead.
    - :doc:`nonconformities`
    - :doc:`configuration`
    - :doc:`audit_pack`
+   - :doc:`edition_switch`

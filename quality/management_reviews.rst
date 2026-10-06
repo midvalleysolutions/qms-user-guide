@@ -36,13 +36,14 @@ Prepare a review
 #. Set the :guilabel:`Meeting date`: today by default.
 #. Check the period the review covers: :guilabel:`Period start` and :guilabel:`Period end`. The start is proposed as
    the day after the period of the last approved review, so that consecutive reviews leave no gap and do not overlap;
-   the end is today. If that period ended today, the start is today as well, and Odoo warns that the two periods
-   share a day. For the first review, fill in the start yourself.
+   the end is today. If that period already reaches today, Odoo proposes the next period of the same length instead,
+   starting the day after. For the first review, fill in the start yourself.
 #. Save.
 
 The review gets its number, such as ``MR/2026/003``, numbered in the year of its meeting, and starts in the **Draft**
-state. Odoo lays out the twelve inputs on the :guilabel:`Inputs` tab and computes their figures at once;
-:guilabel:`Figures computed on` shows when.
+state. Odoo lays out the ISO 9001 inputs on the :guilabel:`Inputs` tab — twelve, or fourteen when the review follows
+the 2026 edition (see `The 2026 agenda`_) — and computes their figures at once; :guilabel:`Figures computed on` shows
+when. :guilabel:`ISO 9001 agenda` shows the edition the review follows.
 
 :guilabel:`Previous review` shows the latest approved review of the company whose period ended before this one starts.
 Its decisions are carried forward into the first input. The first review of a company has no previous review.
@@ -131,7 +132,10 @@ switch. The figures come from the registers of the app, for the review period:
        and overdue, and the risks overdue for review.
    * - 9.3.2 f
      - Opportunities for improvement
-     - The previous review's decisions of kind *Improvement* that are still open.
+     - The previous review's decisions of kind *Improvement* that are still open; with QMS Advanced, the figures of
+       the :doc:`change register <change_register>`: changes approved and implemented by kind, urgent changes,
+       changes closed by verdict, changes cancelled, and changes awaiting their effectiveness review at the end of the
+       period, with the overdue ones.
 
 Figures are shown in your language, counts as numbers and ratios as percentages. They are counted for the review's
 company only, with the access rights of the person who computes them: a quality manager counts every record of the
@@ -154,6 +158,46 @@ Review inputs` with their :guilabel:`Clause`, :guilabel:`Input`, order and :guil
 manager can rename an input, change its order or its text when empty, or archive it. When the agenda holds inputs of
 more than one standard, the :guilabel:`Inputs` tab groups them by standard. Inputs of a standard enabled after the
 review was created are added when you recompute a draft review.
+
+.. _management-reviews-2026:
+
+The 2026 agenda
+---------------
+
+A review follows the edition of ISO 9001 in use on the day it is created (see :doc:`edition_switch`), shown in
+:guilabel:`ISO 9001 agenda`. Under the **2026** edition the ISO 9001 agenda has fourteen inputs instead of twelve:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 10 40 50
+
+   * - Clause
+     - Input
+     - Figures
+   * - 9.3.2 b
+     - Changes in needs and expectations of interested parties
+     - **New.** From the :doc:`context registers <context>`: needs added, needs changed and needs overdue for
+       monitoring. With nothing in the period: *No interested-party needs for the period*.
+   * - 9.3.2 e
+     - Effectiveness of actions on risks
+     - **Replaces** the combined risk input, for the risks only: risks open by level, identified, closed and treated,
+       reduced, unchanged or increased, high risks accepted, treatment actions, risks overdue for review. Empty:
+       *No risks in the register for the period*.
+   * - 9.3.2 e
+     - Effectiveness of actions on opportunities
+     - **Replaces** the combined risk input, for the opportunities only: opportunities open, identified, closed and
+       treated, how many improved, unchanged or worsened, the treatment actions and the opportunities overdue for
+       review. Empty: *No opportunities in the
+       register for the period*.
+
+.. image:: ../_images/management-reviews-2026-agenda.png
+   :alt: A draft review on the 2026 agenda: the end of the risks input, the Effectiveness of actions on opportunities
+         input with its figures, and the Opportunities for improvement input with the change figures.
+
+A review keeps the agenda it was created with. A draft prepared under 2015 keeps its twelve inputs when the company
+switches to 2026, also after :guilabel:`Recompute inputs`; to discuss the 2026 inputs, delete the draft and create a
+new review, or add the missing points in the notes. Held and approved reviews never change. The minutes print
+*ISO 9001 agenda: 2026 edition* (or 2015), and the audit pack judges each review against its own agenda.
 
 ISO 14001 and ISO 45001 inputs
 ------------------------------

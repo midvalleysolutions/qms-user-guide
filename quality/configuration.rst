@@ -287,6 +287,11 @@ With **QMS Advanced** installed, the same page shows more blocks. A value outsid
      - :guilabel:`Communication`
      - 14
      - Days after activation before an objective never communicated is listed as not communicated.
+   * - :guilabel:`Changes`
+     - :guilabel:`Effectiveness review`
+     - 60
+     - Days from the planned implementation date to the proposed effectiveness review date of a new change; at least
+       1. Existing changes keep their date. See :doc:`change_register`.
    * - :guilabel:`Customer satisfaction`
      - :guilabel:`Deterioration threshold`
      - 5

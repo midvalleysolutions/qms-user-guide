@@ -48,7 +48,7 @@ Request a pack
    :alt: The Request an audit pack dialog with the period start and end, the ISO 9001 standard tag, the Include the
          trail CSV box and the Request button.
 
-Odoo creates the pack in the **Queued** state, numbered *PACK/2026/0001* (numbered per company and year), opens its
+Odoo creates the pack in the **Queued** state, numbered *PACK/2026/0002* on the demo data (numbered per company and year), opens its
 form and starts the generation in the background. You do not need to wait on the page: come back later from
 :menuselection:`Quality --> Evidence --> Audit pack --> Audit packs`.
 
@@ -197,8 +197,9 @@ What is inside the ZIP
 ======================
 
 The files come in a fixed order, so that every pack looks the same to an auditor: files 01 to 06, then the registers
-10 to 16, then the environment, health and safety registers 17 to 23, then 07, 08 and 09. A section with nothing in
-the period still gets its PDF, stating *0 records in period*: absence is evidence too. Files 13 and 15 are present
+10 to 16, then the environment, health and safety registers 17 to 23, then the change log 24, then 07, 08 and 09.
+A section with nothing in the period still gets its PDF, stating *0 records in period*: absence is evidence too.
+Files 13 and 15 are present
 only when their add-on is installed. Files 17 to 23 are present only when the pack's :guilabel:`Standards` include
 ISO 14001 or ISO 45001 **and** the registers of that standard are switched on (see :doc:`ehs_setup`): files 20
 (aspects) with ISO 14001, files 21 (hazards) and 23 (worker consultation) with ISO 45001, the others with either.
@@ -228,8 +229,9 @@ ISO 14001 or ISO 45001 **and** the registers of that standard are switched on (s
      - Programmes
    * - ``03_audit_reports/``
      - One PDF per internal audit **reported or closed** with its end date in the period, named after the audit, for
-       example ``AUD_2026_0001.pdf``: the signed audit report with its checklist, findings and conclusion. Audits still
-       in progress are not included: they are not evidence yet.
+       example ``AUD_2026_0001.pdf``: the signed audit report with its objectives, checklist, findings and conclusion
+       (*Objectives: —* when the audit has none). Audits still in progress are not included: they are not evidence
+       yet.
      - Checklist lines of the audit
    * - ``04_document_master_list.pdf``
      - The document master list as at the last day of the period: for each document, its code, title, type, owner,
@@ -307,6 +309,11 @@ ISO 14001 or ISO 45001 **and** the registers of that standard are switched on (s
        outcomes. A confidential reporter is never named, not even for a quality manager. See
        :doc:`worker_consultation`.
      - Consultations and reports
+   * - ``24_qms_change_log.pdf``
+     - The QMS change log of the period: every change approved, implemented, closed or cancelled, with its
+       authorisation, dates, actions arising, review of results and verdict, then the changes still awaiting their
+       review. In every pack, whatever its standards and the ISO 9001 edition. See :doc:`change_register`.
+     - Changes
    * - ``07_clause_matrix.pdf``
      - For each chosen standard, every clause with its number, title, evidence count in the period and the count per
        type of record. Clauses without evidence are highlighted and marked *no evidence*. See `The clause matrix`_.
@@ -452,7 +459,14 @@ the app is not installed shows *n/a*.
      - Every record the pack covers that was amended after locking, with the reasons given (see :doc:`trail`).
    * - Management reviews missing an input
      - Approved reviews of the period whose agenda lacks an ISO 9001 input that existed when the review was created, or
-       holds an input neither discussed nor noted. See :doc:`management_reviews`.
+       holds an input neither discussed nor noted. Each review is judged against the agenda of its own edition: a
+       review created under 2015 is never asked for the 2026 inputs. See :doc:`management_reviews`.
+   * - Audits reported without objectives (ISO 9001:2026 9.2.2)
+     - Only when ISO 9001 follows the 2026 edition: the audits reported or closed in the period with no objectives.
+       See :ref:`audits-objectives`.
+   * - Approved scope without a climate change decision
+     - With file 10 only, under either edition: the scope in force at the end of the period when it was approved
+       without a climate change decision. See :ref:`context-climate`.
    * - Open significant environmental aspects without any control
      - With file 20 only. See :doc:`environmental_aspects`.
    * - Open high or critical hazards waiting for a further control, or critical with PPE only and no justification
@@ -464,7 +478,7 @@ the app is not installed shows *n/a*.
    * - Active monitoring indicators with overdue readings
      - With file 19 only. See :doc:`monitoring`.
 
-The last five checks are left out of the report when their file is not part of the pack.
+The checks marked *With file … only* are left out of the report when their file is not part of the pack.
 
 .. image:: ../_images/audit-pack-integrity.png
    :alt: The integrity and completeness PDF: the trail integrity table per type of record with verified, intact and
@@ -473,6 +487,25 @@ The last five checks are left out of the report when their file is not part of t
 .. tip::
    Request a pack a few weeks before the external audit and read this report first. Each record it lists is a question
    the auditor may ask: complete the record, amend it with a reason, or prepare the explanation.
+
+.. _audit-pack-2026:
+
+Under the 2026 edition
+----------------------
+
+When ISO 9001 follows the 2026 edition (see :doc:`edition_switch`), the completeness checks also list the audits
+reported or closed in the period without objectives, for example the audits started before the switch. The clause
+matrix shows the 2026 titles and sub-clauses.
+
+.. image:: ../_images/audit-pack-objectives-check.png
+   :alt: The completeness checks of the integrity report: Audits reported without objectives (ISO 9001:2026 9.2.2) with
+         a count of 7 and the audit numbers.
+
+The change log, ``24_qms_change_log.pdf``, is in every pack, under either edition:
+
+.. image:: ../_images/audit-pack-file-24.png
+   :alt: The Files list of a done pack, from the review minutes down to 24_qms_change_log.pdf, each with its record
+         count, size, SHA-256 and the Preview and Download links.
 
 The clause matrix
 =================

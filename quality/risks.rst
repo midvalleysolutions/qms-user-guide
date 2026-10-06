@@ -44,6 +44,41 @@ Record a risk or an opportunity
 
 Clause 6.1 of ISO 9001 is proposed in :guilabel:`Clauses`. The risk stays a **Draft** until it is opened.
 
+.. _risks-2026-tags:
+
+Clauses under the 2026 edition
+------------------------------
+
+The 2026 edition of ISO 9001 splits 6.1 into 6.1.1 (determining risks and opportunities), 6.1.2 (actions on risks)
+and 6.1.3 (actions on opportunities). When the clause library follows 2026 (see :doc:`edition_switch`), the register
+tags each record by its type, so the clause view answers *show me your 6.1.3 evidence* without anyone tagging by hand:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 75
+
+   * - Type
+     - Clauses proposed under 2026
+   * - :guilabel:`Risk`
+     - 6.1.1 and 6.1.2
+   * - :guilabel:`Opportunity`
+     - 6.1.1 and 6.1.3
+
+.. image:: ../_images/risks-opportunity-2026-tags.png
+   :alt: The open opportunity RSK/2026/007 tagged 9001 6.1, 6.1.1 and 6.1.3, with its likelihood, benefit and score.
+
+- When you change the type of a draft, the sub-clause follows at once: 6.1.2 becomes 6.1.3, or the reverse. Your
+  other clauses stay.
+- At the switch to 2026, every draft or open risk and opportunity gains 6.1.1 and its type's sub-clause; its 6.1 and
+  other clauses stay. A closed risk is not changed.
+- A record that carries only clauses of other standards, such as an OH&S opportunity tagged with ISO 45001 6.1.2.3, is
+  left alone.
+- The clause view counts 6.1.1 to 6.1.3 under 6.1 too, so the 6.1 evidence does not drop.
+- At a switch back to 2015, 6.1.1 to 6.1.3 are removed from every draft or open record, and 6.1 is added where it was
+  missing. A risk closed under 2026 keeps its tags, and the library then stays on 2026.
+
+Under 2015 nothing changes: risks and opportunities are tagged 6.1.
+
 .. tip::
    From an open or closed nonconformity, click :guilabel:`Raise risk`: Odoo opens a new risk already linked to the
    nonconformity and its process. The nonconformity's :guilabel:`Risks` smart button lists the risks linked to it.
@@ -265,7 +300,9 @@ Evidence, review and dashboard
 - **Management review.** Input *9.3.2 e — Effectiveness of actions on risks and opportunities* shows the risks and
   opportunities open by level, those identified, closed and treated in the period, how many were reduced, unchanged
   or increased, the high risks accepted, the treatment actions open and overdue, and the risks overdue for review.
-  With nothing in the period it reads *No risk register entries for the period*. See :doc:`management_reviews`.
+  With nothing in the period it reads *No risk register entries for the period*. On a review created under the 2026
+  edition, the risks and the opportunities have an input each, *Effectiveness of actions on risks* and *Effectiveness
+  of actions on opportunities*, with the figures of their own type. See :doc:`management_reviews`.
 - **Dashboard.** The :guilabel:`High and critical risks` tile counts the open risks of level High or Critical. It is
   red when one of them has no treatment action (and is not accepted) or is overdue for review, amber otherwise.
   Accepted high risks are counted but never turn it red.

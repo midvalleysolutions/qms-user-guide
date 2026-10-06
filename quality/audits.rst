@@ -198,10 +198,13 @@ Plan an audit
 #. Choose the :guilabel:`Lead auditor` and, if needed, the :guilabel:`Co-auditors`. Only users with the
    **Internal auditor** role are offered — quality managers have it too — and Odoo refuses anyone else, who could
    neither read the audit nor record its results.
+#. Write the :guilabel:`Objectives`: what this audit sets out to establish, for example *Establish whether the new
+   inspection step is applied on every shift*. Under the 2026 edition of ISO 9001 the field is required (see
+   `Audit objectives`_).
 #. On the :guilabel:`Scope and conclusion` tab, check the :guilabel:`Clauses` in scope. When you leave them empty,
    the process's realised clauses are used. Describe in :guilabel:`Scope` what else the audit covers: sites, shifts,
    products.
-#. Save. The audit gets its number, such as ``AUD/2026/0003``, numbered in the year of its planned month, and starts
+#. Save. The audit gets its number, such as ``AUD/2026/0010``, numbered in the year of its planned month, and starts
    in the **Planned** state.
 
 The process, programme, template, planned month and clauses can be changed only while the audit is planned. The
@@ -227,6 +230,29 @@ qualified (ISO 19011). The qualification is a competence record of the *Internal
 
 Without the add-on, the role check alone applies and none of this is shown. How to record a qualification is explained
 in :doc:`competence`.
+
+.. _audits-objectives:
+
+Audit objectives
+----------------
+
+ISO 9001:2026 asks for the objectives of each audit, besides its criteria and scope. Every audit has an
+:guilabel:`Objectives` field in its :guilabel:`Plan` column.
+
+.. image:: ../_images/audits-objectives.png
+   :alt: The planned audit AUD/2026/0009 with its process, programme, planned month and Objectives, and the Start
+         button.
+
+- Under the **2015** edition, the field is optional: an audit starts with or without it.
+- Under the **2026** edition (see :doc:`edition_switch`), the field is required on a planned audit, and
+  :guilabel:`Start` is refused without it: *Write the audit's objectives before starting it: under ISO 9001:2026 each
+  audit states what it sets out to establish (9.2.2). Fill in Objectives on this audit, then press Start again.* While
+  the audit is in progress, the objectives can be reworded but not cleared: *An audit in progress keeps its objectives
+  under ISO 9001:2026. Change the text instead of clearing it.*
+
+An audit started under 2015 and still in progress when the company switches to 2026 is not stopped: it can be reported
+and closed without objectives, and the audit pack lists it (see :ref:`audit-pack-2026`). The objectives are printed on
+the audit report under the scope, or *—* when there are none, and a change of the objectives is kept in the trail.
 
 Auditor independence
 --------------------
@@ -343,7 +369,7 @@ register.
 A quality manager opens the reported audit and clicks :guilabel:`Close`. For every **minor** and **major** finding,
 Odoo creates a nonconformity in the **New** state:
 
-- its title is the audit number, the clause number and the grade, for example *AUD/2026/0003 · 8.4.1 · Minor*;
+- its title is the audit number, the clause number and the grade, for example *AUD/2026/0003 · 10.2 · Minor*;
 - its :guilabel:`Source Type` is :guilabel:`Audit` and its source is the finding;
 - its :guilabel:`Severity` is the grade: :guilabel:`Minor` or :guilabel:`Major`;
 - it carries the finding's clause, the audited process and the finding's description;
@@ -406,10 +432,10 @@ Print the report
 ================
 
 Click :guilabel:`Print report` on an audit that is in progress, reported or closed. The PDF shows the audit header
-(programme, state, auditors, dates, scope and clauses), the checklist with results and evidence, the findings with
-the numbers of the nonconformities they became, the conclusion and summary, and, once reported, the signature block
-with the signer, the time in UTC and the report hash. Its footer carries the generation date and a fingerprint of
-the document, like every Quality report.
+(programme, state, auditors, dates, scope, objectives and clauses), the checklist with results and evidence, the
+findings with the numbers of the nonconformities they became, the conclusion and summary, and, once reported, the
+signature block with the signer, the time in UTC and the report hash. Its footer carries the generation date and a
+fingerprint of the document, like every Quality report.
 
 - While the audit is **In progress**, the PDF carries a large *DRAFT — not reported* watermark and no signature.
 - Once the audit is **Closed**, the first print is stored on the audit, and later prints return that same stored

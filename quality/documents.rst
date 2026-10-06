@@ -48,7 +48,7 @@ Every version moves through these states:
 Set up document types
 =====================
 
-A document type says what kind of document it is and how it is controlled. QMS Advanced installs seven shared types:
+A document type says what kind of document it is and how it is controlled. QMS Advanced installs eight shared types:
 
 .. list-table::
    :header-rows: 1
@@ -89,13 +89,28 @@ A document type says what kind of document it is and how it is controlled. QMS A
      - Yes
      - Top management
      - Quality policy
+   * - Code of conduct and quality culture
+     - ``COC``
+     - Yes
+     - Top management
+     - Internal
    * - External document
      - ``EXT``
      - No
      - Document owner
      - External origin
 
-Each of them has a review period of 12 months. To change them or add your own:
+Each of them has a review period of 12 months.
+
+.. _documents-code-of-conduct:
+
+.. note::
+   The type *Code of conduct and quality culture* is a starting point for the document in which top management sets
+   out the quality culture and the ethical behaviour it expects, which the 2026 edition of ISO 9001 names in clauses
+   5.1.1 and 7.3. Its documents are tagged with both clauses, approved by top management (see `The quality policy`_)
+   and acknowledged by every reader of their audience, so the acknowledgement matrix shows who is aware of it.
+
+To change the types or add your own:
 
 #. Go to :menuselection:`Quality --> Configuration --> Document types`.
 #. Click :guilabel:`New` to add a line, or click a line to change it.
@@ -721,7 +736,8 @@ To set the periods:
 #. Click :guilabel:`New`, choose the :guilabel:`Record type` — for example *Nonconformities*, *Document versions*,
    *Internal audits*, *Management reviews*, *Audit packs*, *Scope versions*, *Risks and opportunities*, *Quality
    objectives*, *Customer satisfaction records*, *Calibration records* and, with the add-ons, *Competence records*,
-   *Training attendances*, *Supplier evaluations* and *Supplier decisions* — and the :guilabel:`Years`.
+   *Training attendances*, *Supplier evaluations* and *Supplier decisions*, and *Changes* (from the day a change is
+   closed or cancelled, see :doc:`change_register`) — and the :guilabel:`Years`.
 #. Write the :guilabel:`Legal basis`, for example *product liability: 10 years*.
 #. Leave :guilabel:`Company` empty for a period shared by every company, or choose one: a row for a company overrides
    the shared one for that company's records. The list shows the company of each row, so a shared row (empty
